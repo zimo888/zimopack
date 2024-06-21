@@ -3,11 +3,16 @@ const WebpackBar = require("webpackbar");
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { existsSync } = require('fs')
+const kill = require('tree-kill');
 console.log('当前打包环境:', process.env.NODE_ENV === 'development' ? '开发环境' : '生产环境');
 const workspacePath = process.cwd();
 //custom index
 const userTemplate = path.resolve(process.cwd(), './public/index.html')
-
+const pid = process.pid
+process.on("SIGINT", () => {
+  console.log("kill thread", pid);
+  kill(pid, "SIGKILL")
+})
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: {

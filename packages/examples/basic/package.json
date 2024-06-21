@@ -1,15 +1,25 @@
 {
-    "name":"zimopack-test",
-    "version":"1.0.0",
-    "scripts": {
-        "start": "zimopack start",
-        "build": "zimopack build"
-    },
-    "dependencies": {
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1"
-    },
-    "devDependencies": {
-        "zimopack": "^1.0.3"
-    }
+  "name": "zimopack-test",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "zimopack start",
+    "build": "zimopack build",
+    "lib": "zimopack lib",
+    "report": "zimopack report"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.2",
+    "zimopack": "^1.0.7"
+  },
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "es"
+  ]
 }

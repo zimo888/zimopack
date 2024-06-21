@@ -1,6 +1,6 @@
 {
     "name":"zimopack",
-    "version":"1.0.3",
+    "version":"1.0.7",
     "main":"index.js",
     "bin": {
         "zimopack": "index.js"
@@ -28,6 +28,20 @@
         "webpack-dev-server": "^5.0.4",
         "webpackbar": "^6.0.1",
         "webpack-merge": "5.10.0",
-        "mini-css-extract-plugin": "^2.9.0"
+        "mini-css-extract-plugin": "^2.9.0",
+        "gulp": "^4.0.2",
+        "gulp-less": "^5.0.0",
+        "gulp-replace": "1.1.3",
+        "gulp-resolve-url": "^0.0.2",
+        "gulp-sass": "^5.1.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-typescript": "6.0.0-alpha.1",
+        "gulp-util": "^3.0.8",
+        "resolve-tspaths": "^0.8.13",
+        "copyfiles": "^2.4.1",
+        "sass-extended-importer": "^0.4.2",
+        "tree-kill": "^1.2.2",
+        "typescript": "^4.6.4",
+        "webpack-bundle-analyzer": "^4.5.0"
     }
 }

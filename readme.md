@@ -16,10 +16,20 @@ package.json
 {
     "scripts":{
         "start": "zimopack start",
-        "build":"zimopack build"
+        "build": "zimopack build",
+        "lib": "zimopack lib",
+        "report": "zimopack report"
     }
 }
 ```
+
+start: 启动本地开发服务
+
+build: 构建工程
+
+lib ：打包 es、lib 组件库
+
+report: 分析包大小
 
 ## 自定义配置
 
@@ -35,3 +45,4 @@ module.exports = {
 }
 
 ```
+
