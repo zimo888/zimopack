@@ -4,6 +4,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { existsSync } = require('fs')
 const kill = require('tree-kill');
+const { ESBuildMinifyPlugin } = require('esbuild-loader')
 console.log('当前打包环境:', process.env.NODE_ENV === 'development' ? '开发环境' : '生产环境');
 const workspacePath = process.cwd();
 //custom index
@@ -26,6 +27,7 @@ module.exports = {
     clean: true,
   },
   resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
     alias: {
       '@src': path.resolve(workspacePath, './src')
     }
@@ -117,6 +119,28 @@ module.exports = {
     }),
     new WebpackBar(),
   ],
+
+  optimization: {
+    chunkIds: "named",
+    minimize: true,
+    minimizer: [
+      global.terser? new TerserPlugin({
+      parallel: true,
+      terserOptions: {
+        format: {
+          comments: false,
+        },
+        // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
+      },
+      extractComments: false,
+    }): new ESBuildMinifyPlugin({
+        target: "es2015",
+        css: true,
+        // format: 'iife'
+      }),
+
+    ],
+  },
   performance: { // 关闭性能提示
     hints: false,
   }
